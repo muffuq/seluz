@@ -1,0 +1,246 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.cursor {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 1px solid black;
+    transition: all 200ms ease-out;
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform: translate(calc(-50% + 15px), -50%);
+    z-index: 30;
+  }
+  
+  .cursor2 {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: black;
+    opacity: .3;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width .3s, height .3s, opacity .3s;
+    z-index: 30;
+  }
+  
+  .hover {
+    background-color: red;
+    opacity: 0.5;
+  }
+  
+  .cursorinnerhover {
+    width: 50px;
+    height: 50px;
+    opacity: .5;
+  }
+
+.site{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.background{
+    position: fixed;
+    right: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/*Header And Footer*/
+
+.header{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 5%;
+    font-weight: bolder;
+    z-index: 31;
+}
+
+.header img{
+    width: 75px;
+}
+
+.logo{
+    position: relative;
+    right: -60px;
+}
+
+.header nav{
+    position: relative;
+    display: flex;
+    list-style: none;
+    text-indent: 30px;
+}
+
+.header nav li {
+    cursor: pointer;
+}
+
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+    top: 90%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.copyright{
+    display: flex;
+    text-indent: 10px;
+    font-weight: bolder;
+}
+
+.copyright img{
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Swiper*/
+
+.swiper{
+    width: 100%;
+    height: 100vh;
+    background-image: url("");
+}
+
+.swiper-wrapper{
+    width: 100%;
+    height: 100vh;
+}
+.swiper-slide{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.music-wave{
+    position: relative;
+    right: 3%;
+}
+
+.sound-wave {
+    display: flex;
+}
+.sound-bar {
+    width: 3px;
+    height: 4px;
+    background-color: black;
+    margin-right: 2px;
+    transform: scaleY(1);
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+.sound-bar:nth-child(4n) {
+    animation-name: bar-scale-xl;
+    animation-duration: 1s;
+}
+.sound-bar:nth-child(4) {
+    animation-duration: 1.15s;
+}
+.sound-bar:nth-child(3) {
+    animation-name: bar-scale-lg;
+    animation-duration: 0.8s;
+}
+.sound-bar:nth-child(6) {
+    animation-name: bar-scale-md;
+    animation-duration: 0.85s;
+}
+.sound-bar:nth-child(2), .sound-bar:nth-child(5), .sound-bar:nth-child(7), .sound-bar:nth-child(9) {
+    animation-name: bar-scale-sm;
+    animation-duration: 0.9s;
+}
+@keyframes bar-scale-sm {
+    0%, 50% {
+        transform: scaleY(1);
+   }
+    25% {
+        transform: scaleY(6);
+   }
+    75% {
+        transform: scaleY(4);
+   }
+}
+@keyframes bar-scale-md {
+    0%, 50% {
+        transform: scaleY(2);
+   }
+    25% {
+        transform: scaleY(6);
+   }
+    75% {
+        transform: scaleY(5);
+   }
+}
+@keyframes bar-scale-lg {
+    0%, 50% {
+        transform: scaleY(8);
+   }
+    25% {
+        transform: scaleY(4);
+   }
+    75% {
+        transform: scaleY(6);
+   }
+}
+@keyframes bar-scale-xl {
+    0%, 50% {
+        transform: scaleY(1);
+   }
+    25% {
+        transform: scaleY(7);
+   }
+    75% {
+        transform: scaleY(11);
+   }
+}
